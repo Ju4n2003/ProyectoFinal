@@ -73,7 +73,7 @@ public class App {
             int opcion = scanner.nextInt();
             scanner.nextLine(); // Consumir nueva línea
     
-            Administrador admin = new Administrador("Juan Esteban", "1015392219", "3163726736", "Administrador", "0611");
+            Administrador admin = new Administrador("Juan Esteban", "1015392219", "3163726736", "Administrador", "0611", 1600000);
     
             switch (opcion) {
                 case 1 -> {
@@ -464,7 +464,7 @@ private static void registrarCamion(Scanner scanner) {
     String empleadoNombre = scanner.nextLine();
     System.out.print("Cédula del empleado: ");
     String empleadoCedula = scanner.nextLine();
-    Empleado empleado = new Empleado(empleadoNombre, empleadoCedula, "N/A", "Vendedor", "N/A");
+    Empleado empleado = new Empleado(empleadoNombre, empleadoCedula, "N/A", "Vendedor", "N/A", 1400000);
 
     Vehiculo vehiculo = vehiculos.get(vehiculoIndex);
     Cliente cliente = clientes.get(clienteIndex);

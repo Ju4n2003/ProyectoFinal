@@ -2,8 +2,8 @@ package co.edu.uniquindio.poo;
 
 public class Administrador extends Empleado {
 
-    public Administrador(String nombre, String cedula, String telefono, String cargo, String credenciales) {
-        super(nombre, cedula, telefono, cargo, credenciales);
+    public Administrador(String nombre, String cedula, String telefono, String cargo, String credenciales, double salario) {
+        super(nombre, cedula, telefono, cargo, credenciales, salario);
     }
     public void recuperarClave(String credenciales) throws CredencialesInvalidas {
         if (!this.getCredenciales().equals(credenciales)) {

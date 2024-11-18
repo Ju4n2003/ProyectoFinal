@@ -10,7 +10,10 @@ public class Sedan extends Vehiculo {
     private int numBolsasAire;
     private boolean frenoABS;
 
-    public Sedan(String marca, String modelo, boolean esNuevo, int cambio, double velMax, double cilindraje, double precio, String tipoCombustible, boolean disponible, int numPasajeros, int numPuertas, int capacidadMaletero, boolean aireAcondicionado, boolean camaraReversa, boolean velocidadCrucero, int numBolsasAire, boolean frenoABS) {
+    public Sedan(String marca, String modelo, boolean esNuevo, int cambio, double velMax, double cilindraje,
+            double precio, String tipoCombustible, boolean disponible, int numPasajeros, int numPuertas,
+            int capacidadMaletero, boolean aireAcondicionado, boolean camaraReversa, boolean velocidadCrucero,
+            int numBolsasAire, boolean frenoABS) {
         super(marca, modelo, esNuevo, cambio, velMax, cilindraje, precio, tipoCombustible, disponible);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
@@ -20,6 +23,7 @@ public class Sedan extends Vehiculo {
         this.velocidadCrucero = velocidadCrucero;
         this.numBolsasAire = numBolsasAire;
         this.frenoABS = frenoABS;
+        assert numPuertas > 0 : "El vehiculo debe tener por lo menos una puerta";
     }
 
     public int getNumPasajeros() {
@@ -86,4 +90,3 @@ public class Sedan extends Vehiculo {
         this.frenoABS = frenoABS;
     }
 }
-

@@ -15,8 +15,13 @@ public class UsuarioTest {
     @Test
     public void datosNulos() {
 
-        assertThrows(NullPointerException.class, () -> new Empleado(null, null, null, null, null));
+        assertThrows(NullPointerException.class, () -> new Empleado(null, null, null, null, null, 0));
 
     }
-    
+    @Test
+    public void salarioNegativo() {
+        
+        assertThrows(Throwable.class, ()-> new Empleado("Carlos", "10943622", "3248667422", "Vendedor", "0611", -1400000));
+
+    }
 }

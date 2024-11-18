@@ -3,11 +3,14 @@ package co.edu.uniquindio.poo;
 public class Empleado extends Usuario implements ITransaccion {
     private String cargo;
     private String credenciales;
+    private double salario;
 
-    public Empleado(String nombre, String cedula, String telefono, String cargo, String credenciales) {
+    public Empleado(String nombre, String cedula, String telefono, String cargo, String credenciales, double salario) {
         super(nombre, cedula, telefono);
         this.cargo = cargo;
         this.credenciales = credenciales;
+        this.salario = salario;
+        assert salario >= 0;
     }
 
     public String getCargo() {
@@ -16,6 +19,14 @@ public class Empleado extends Usuario implements ITransaccion {
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
     public String getCredenciales() {
@@ -56,4 +67,10 @@ public class Empleado extends Usuario implements ITransaccion {
             System.out.println("El vehículo no está disponible para la transacción.");
         }
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+"Empleado [cargo=" + cargo + ", credenciales=" + credenciales + ", salario=" + salario + "]";
+    }
+    
 }

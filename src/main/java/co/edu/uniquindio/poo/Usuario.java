@@ -35,4 +35,10 @@ public abstract class Usuario {
         this.telefono = telefono;
     }
     public abstract void realizarTransaccion(Vehiculo vehiculo, Cliente cliente, String tipo, String fecha);
+
+    @Override
+    public String toString() {
+        return "Usuario [nombre=" + nombre + ", cedula=" + cedula + ", telefono=" + telefono + "]";
+    }
+    
 }

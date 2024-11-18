@@ -10,9 +10,7 @@ import org.junit.jupiter.api.Test;
 public class VehiculoTest {
     @Test
     public void DatosCompletos() {
-        Vehiculo vehiculo = new Vehiculo("chevrolet", "2024", true, 5, 200, 1000, 64000000.0, "diesel", true){
-
-        };
+        Sedan vehiculo = new Sedan("chevrolete", "2024", true, 5, 200, 1000, 64000000, "diesel", true, 5, 5, 50, true, true, true, 4, true);
         assertEquals("chevrolet", vehiculo.getMarca());
         assertEquals("2024", vehiculo.getModelo());
         assertTrue(vehiculo.isEsNuevo());
@@ -22,6 +20,15 @@ public class VehiculoTest {
         assertEquals(64000000.0, vehiculo.getPrecio());
         assertEquals("diesel", vehiculo.getTipoCombustible());
         assertTrue(vehiculo.isDisponible());
+        assertEquals(5, vehiculo.getNumPasajeros());
+        assertEquals(5, vehiculo.getNumPuertas());
+        assertEquals(50, vehiculo.getCapacidadMaletero());
+        assertEquals(true, vehiculo.isAireAcondicionado());
+        assertEquals(true, vehiculo.isCamaraReversa());
+        assertEquals(true, vehiculo.isVelocidadCrucero());
+        assertEquals(4, vehiculo.getNumBolsasAire());
+        assertEquals(true, vehiculo.isFrenoABS());
+        
     }
 
     @Test
@@ -39,5 +46,10 @@ public class VehiculoTest {
     public void precioNegativo(){
         
         assertThrows(Throwable.class,()-> new Sedan("chevrolete", "2024", true, 5, 200, 1000, -64000000, "diesel", true, 5, 5, 50, true, true, false, 4, true));
+    }
+    @Test 
+    public void numPuertasNegativo(){
+
+        assertThrows(Throwable.class,()-> new Sedan("chevrolet", "2024", true, 5, 200, 1000, 64000000, "diesel", true, 5, -5, 50, true, true, false, 4, true));
     }
 }

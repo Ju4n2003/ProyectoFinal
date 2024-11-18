@@ -11,7 +11,8 @@ public abstract class Vehiculo {
     private String tipoCombustible;
     private boolean disponible;
 
-    public Vehiculo(String marca, String modelo, boolean esNuevo, int cambio, double velMax, double cilindraje, double precio, String tipoCombustible, boolean disponible) {
+    public Vehiculo(String marca, String modelo, boolean esNuevo, int cambio, double velMax, double cilindraje,
+            double precio, String tipoCombustible, boolean disponible) {
         this.marca = marca;
         this.modelo = modelo;
         this.esNuevo = esNuevo;
@@ -22,11 +23,11 @@ public abstract class Vehiculo {
         this.tipoCombustible = tipoCombustible;
         this.disponible = disponible;
         assert marca != null && !marca.isBlank();
-        assert modelo!= null &&!modelo.isBlank();
-        assert precio >= 0;
+        assert modelo != null && !modelo.isBlank();
+        assert precio >= 0 : "El precio del vehiculo debe ser positivo";
         assert velMax > 0;
         assert cilindraje > 0;
-        assert tipoCombustible!= null &&!tipoCombustible.isBlank();
+        assert tipoCombustible != null && !tipoCombustible.isBlank();
         assert disponible;
         assert cambio > 3;
     }
@@ -109,6 +110,5 @@ public abstract class Vehiculo {
                 + ", velMax=" + velMax + ", cilindraje=" + cilindraje + ", precio=" + precio + ", tipoCombustible="
                 + tipoCombustible + ", disponible=" + disponible + "]";
     }
-    
-}
 
+}
